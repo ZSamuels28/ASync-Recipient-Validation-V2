@@ -41,8 +41,8 @@ if (
 ) {
   if (extname(myArgs[1]).toLowerCase() == ".csv" && extname(myArgs[3]).toLowerCase() == ".csv") {
     let completed = 0
-    const { window } = new JSDOM();
-    const start = window.performance.now();
+    //const { window } = new JSDOM();
+    //const start = window.performance.now();
     const csvWriter = createCsvWriter({
       path: myArgs[3],
       header: [
