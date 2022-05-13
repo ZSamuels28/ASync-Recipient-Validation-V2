@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "axios-retry": "^3.2.5",
+    "child_process": "^1.0.2",
     "csv-writer": "^1.6.0",
     "dotenv": "^16.0.1",
     "fast-csv": "^4.3.6",

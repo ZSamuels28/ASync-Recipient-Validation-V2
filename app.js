@@ -16,6 +16,22 @@ const { extname } = require("path");
 const { Stream } = require("stream");
 const myArgs = process.argv.slice(2);
 
+/*
+function countLines(count)
+{
+  var i;
+  //var count = 0;
+
+  require('fs').createReadStream(myArgs[1])
+  .on('data', function(chunk) {
+    for (i=0; i < chunk.length; ++i)
+      if (chunk[i] == 10) count++;
+  })
+  .on('end', function() {
+    count = count++;
+  });
+}
+*/
 
 if (
   myArgs[0] == "-i" &&
@@ -45,7 +61,13 @@ if (
       .on("data", async (email) =>
       {
           let url = SPARKPOST_HOST + "/api/v1/recipient-validation/single/" + email
-          await axios.get(url, {
+          var instance = axios.create({
+            validateStatus: function (status)
+            {
+                return status == 200;
+            }
+          });
+          await instance.get(url, {
             headers: {
               Authorization: SPARKPOST_API_KEY
             }
