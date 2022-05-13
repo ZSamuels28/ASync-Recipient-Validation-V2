@@ -6,6 +6,8 @@
 
 Firstly ensure you have `node`:
 
+At the time of this project, Node v16.15.0 was used. Node v18.1.0 was tested but the performance was not as good as v16.
+
 Either by downloading directly and installing via: https://nodejs.org/en/download/
 
 Or by using the following instructions: https://treehouse.github.io/installation-guides/mac/node-mac.html
