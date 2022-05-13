@@ -15,7 +15,7 @@ if (
       for (let i = 0; i < chunk.length; ++i) if (chunk[i] == 10) count++;
     }) //Reads the infile and increases the count for each line
     .on("close", function () {
-      //At the end of the file, after all lines have been counted, run the recipient validation function
+      //At the end of the infile, after all lines have been counted, run the recipient validation function
       validateRecipients.validateRecipients(count, myArgs);
     });
 } else if (myArgs[0] == "-h") {
