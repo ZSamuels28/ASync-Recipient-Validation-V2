@@ -13,11 +13,11 @@
     "axios-retry": "^3.2.5",
     "csv-writer": "^1.6.0",
     "dotenv": "^16.0.1",
-    "fast-csv": "^4.3.6",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
     "install": "^0.13.0",
     "jsdom": "^19.0.0",
+    "json-2-csv": "^3.17.1",
     "npm": "^8.10.0"
   }
 }
