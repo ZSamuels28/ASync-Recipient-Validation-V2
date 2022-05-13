@@ -13,8 +13,8 @@ Or by using the following instructions: https://treehouse.github.io/installation
 Get the project, and install dependencies.
 
 ```
-git clone https://github.com/ZSamuels28/ASyncRecipientValidation.git
-cd ASyncRecipientValidation
+git clone https://github.com/ZSamuels28/ASyncRecipientValidation-V2.git
+cd ASyncRecipientValidation-V2
 ```
 
 You can now type `node ./app.js -h` and see usage info.
