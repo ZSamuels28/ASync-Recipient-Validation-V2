@@ -7,12 +7,11 @@ if (
   myArgs[2] == "-o" &&
   myArgs[3] != null
 ) {
-  var i;
-  var count = 0;
+  let count = 0;
   require("fs")
     .createReadStream(myArgs[1])
     .on("data", function (chunk) {
-      for (i = 0; i < chunk.length; ++i) if (chunk[i] == 10) count++;
+      for (let i = 0; i < chunk.length; ++i) if (chunk[i] == 10) count++;
     })
     .on("close", function () {
       validateRecipients.validateRecipients(count, myArgs);
