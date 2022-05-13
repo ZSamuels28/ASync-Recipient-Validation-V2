@@ -27,7 +27,7 @@ async function validateRecipients(email_count, myArgs) {
 
     const output = fs.createWriteStream(myArgs[3]); //Outfile
     output.write(
-      "Email,Delivery_Confidence,Is_Disposable,Is_Free,Is_Role,Result,Valid\n"
+      "Email,Valid,Result,Reason,Is_Role,Is_Disposable,Is_Free,Delivery_Confidence\n"
     ); //Write the headers in the outfile
 
     fs.createReadStream(myArgs[1])
@@ -42,12 +42,25 @@ async function validateRecipients(email_count, myArgs) {
             },
           }) //For each row read in from the infile, call the SparkPost Recipient Validation API
           .then(function (response) {
-            response.data.email = String(email); //Adds the email as a value/key pair to the response JSON to be used for output
+            response.data.results.email = String(email); //Adds the email as a value/key pair to the response JSON to be used for output
+
+            response.data.results.reason
+              ? null
+              : (response.data.results.reason = ""); //If reason is null, set it to blank so the CSV is uniform
 
             //Utilizes json-2-csv to convert the JSON to CSV format and output
             let options = {
               prependHeader: false, //Disables JSON values from being added as header rows for every line
-              sortHeader: true, //Sorts the values
+              keys: [
+                "results.email",
+                "results.valid",
+                "results.result",
+                "results.reason",
+                "results.is_role",
+                "results.is_disposable",
+                "results.is_free",
+                "results.delivery_confidence",
+              ], //Sets the order of keys
             };
             let json2csvCallback = function (err, csv) {
               if (err) throw err;
