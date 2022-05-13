@@ -1,6 +1,6 @@
 const csv = require("fast-csv");
 const fs = require("fs");
-const axios = require("axios");
+const axios = require("./axios-instance-config");
 const dotenv = require("dotenv");
 const path = require("path");
 const { JSDOM } = require("jsdom");
