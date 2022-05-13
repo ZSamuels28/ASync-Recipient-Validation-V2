@@ -63,19 +63,15 @@ if (
                   delivery_confidence: response.data.results.delivery_confidence,
               }]
             )
+            completed++
+            process.stdout.write(
+              `Done with ${completed}\r`
+            );
           })
         .catch((error) => {
           console.log(`${error} with email ${email}`);
         })
-          completed++
-          process.stdout.write(
-            `Done with ${completed}\r`
-          );
-        
       })
-      .on("end", () => 
-      {
-      });
   } else {
     console.log(
       "\x1b[31mInvalid input or output file. Please ensure these files are in .csv format"
