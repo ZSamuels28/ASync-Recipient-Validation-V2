@@ -76,8 +76,7 @@ ulises_rohan@gmail.com
 The output file follows the same form as the SparkPost web application. Note that
 *all* your address results are reported, not just the rejected ones (unlike the web UI validation).
 
-Validations are made via an asynchronous API call so speed will be determined on machine capability 
-as well as API rate limitations.
+Validations are made via an asynchronous API call so speed will be determined on machine capability.
 
 ## Progress
 
@@ -85,18 +84,7 @@ Progress of email validations will be shown in the console in the following form
 `Done with [CompletedCalls] / [TotalValidEmails]`
 
 When all APIs are completed, the following will be shown if all emails are valid:
-`All emails successfully validated.`
-
-If there are invalid emails found, the following will be shown:
-```
-Email validation completed with the following results:
-Emails Successfully Validated: [CompletedCalls]
-Emails with Errors: [InvalidEmails] (See logs/errors.csv for invalid emails)
-```
-
-## Invalid Email Syntax
-
-The email syntax check uses regular expressions to ensure emails are in the valid format. Any invalid emails are then exported to the logs/errors.csv file.
+`All emails successfully validated in X seconds`
 
 ## See Also
 [SparkPost Developer Hub](https://developers.sparkpost.com/)
