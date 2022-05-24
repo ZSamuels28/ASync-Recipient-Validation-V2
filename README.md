@@ -65,14 +65,11 @@ Use the `-i` and `-o` options to specify input and output files.
 
 An example input file is included in the project (valtest.csv) and can be seen below:
 ```
-devon.herman58@gmail.com
-sherman.goldner@yahoo.com
-maurine83@yahoo.com
-christophe86@yahoo.com
-katheryn.mckenzie@gmail.com
-moises.dickens@yahoo.com
-fanny.buckridge@yahoo.com
-ulises_rohan@gmail.com
+Kristylucky2914254@test.yahoo.ca
+Renee_E3291294@test.earthlink.net
+Todddoubtfu123l@test.124frontiernet.net
+fashion126K142esari@test.gmail.com
+shyTrevor723295234@test.zonnet.nl
 ```
 
 The output file follows the same form as the SparkPost web application. Note that
