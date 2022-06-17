@@ -34,6 +34,7 @@ SPARKPOST_API_KEY
 ```
 
 The variables.env file should look something like the following:
+
 ```
 # .env
 SPARKPOST_API_KEY=1234567890ABCDEFGHIJKLMNOPQRSTUVXYZ
@@ -46,7 +47,7 @@ SPARKPOST_HOST=https://api.sparkpost.com
 node ./app.js -h
 usage: ./app.js [-h] [-i INFILE] [-o OUTFILE]
 
-Validate recipients with SparkPost. Reads from specified input CSV file. 
+Validate recipients with SparkPost. Reads from specified input CSV file.
 Results to specified output file. Error rows are exported to the ErrorLog.csv file.
 
 optional arguments:
@@ -64,6 +65,7 @@ optional arguments:
 Use the `-i` and `-o` options to specify input and output files.
 
 An example input file is included in the project (valtest.csv) and can be seen below:
+
 ```
 Kristylucky2914254@test.yahoo.ca
 Renee_E3291294@test.earthlink.net
@@ -73,7 +75,7 @@ shyTrevor723295234@test.zonnet.nl
 ```
 
 The output file follows the same form as the SparkPost web application. Note that
-*all* your address results are reported, not just the rejected ones (unlike the web UI validation).
+_all_ your address results are reported, not just the rejected ones (unlike the web UI validation).
 
 Validations are made via an asynchronous API call so speed will be determined on machine capability.
 
@@ -86,9 +88,9 @@ When all APIs are completed, the following will be shown if all emails are valid
 `All emails successfully validated in X seconds`
 
 ## See Also
+
 [SparkPost Developer Hub](https://developers.sparkpost.com/)
 
 [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/)
 
 [Recipient Validation SparkPost API endpoint](https://developers.sparkpost.com/api/recipient-validation/)
-
