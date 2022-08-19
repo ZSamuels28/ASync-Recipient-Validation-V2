@@ -34,3 +34,4 @@ jobs:
           echo "SPARKPOST_API_KEY=${{ secrets.SPARKPOST_API_KEY }}" >> config/variables.env
           echo "SPARKPOST_HOST=${{ secrets.SPARKPOST_HOST }}" >> config/variables.env
           node ./app.js -h
+          echo "text"
