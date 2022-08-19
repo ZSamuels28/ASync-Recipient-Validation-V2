@@ -34,5 +34,5 @@ jobs:
         echo "SPARKPOST_HOST=${{ secrets.SPARKPOST_HOST }}" >> config/variables.env
     - name: Run App
       run: node ./app.js -i ./sample_files/valtest.csv -o ./sample_files/out.csv
-    - name: Cat Test
+    - name: Output File Test
       run: cat ./sample_files/out.csv
