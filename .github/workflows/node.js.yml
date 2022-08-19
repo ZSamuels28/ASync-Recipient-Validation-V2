@@ -28,4 +28,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: node ./app.js -h
+    - name: Create variables.env file
+      run: |
+        echo "SPARKPOST_API_KEY=${{ secrets.SPARKPOST_API_KEY }}" >> config/variables.env
+        echo "SPARKPOST_HOST=${{ secrets.SPARKPOST_HOST }}" >> config/variables.env
+    - name: Run App
+      run: node ./app.js -i ./sample_files/valtest.csv -o ./sample_files/out.csv
