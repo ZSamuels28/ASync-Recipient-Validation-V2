@@ -2,6 +2,10 @@
 
 [Sign up](https://app.sparkpost.com/join?plan=free-0817?src=Social%20Media&sfdcid=70160000000pqBb&pc=GitHubSignUp&utm_source=github&utm_medium=social-media&utm_campaign=github&utm_content=sign-up) for a SparkPost account and visit our [Developer Hub](https://developers.sparkpost.com) for even more content.
 
+# SparkPost ASyncRecipientValidation
+
+[![Build Status](https://github.com/ZSamuels28/ASyncRecipientValidation-V2/actions/workflows/node.js.yml/badge.svg)](https://github.com/ZSamuels28/ASyncRecipientValidation-V2/actions/workflows/node.js.yml)
+
 ## Easy installation
 
 Firstly ensure you have `node`:
