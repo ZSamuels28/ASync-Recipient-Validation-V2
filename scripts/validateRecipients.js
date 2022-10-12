@@ -27,7 +27,7 @@ async function validateRecipients(email_count, myArgs) {
 
     const output = fs.createWriteStream(myArgs[3]); //Outfile
     output.write(
-      "Email,Valid,Result,Reason,Is_Role,Is_Disposable,Is_Free,Delivery_Confidence\n"
+      "Email,Valid,Result,Reason,Is_Role,Is_Disposable,Is_Free,Delivery_Confidence,Did_You_Mean\n"
     ); //Write the headers in the outfile
 
     fs.createReadStream(myArgs[1])
@@ -48,6 +48,10 @@ async function validateRecipients(email_count, myArgs) {
               ? null
               : (response.data.results.reason = ""); //If reason is null, set it to blank so the CSV is uniform
 
+            response.data.results.did_you_mean
+              ? null
+              : (response.data.results.did_you_mean = ""); //If did_you_mean is null, set it to blank so the CSV is uniform
+
             //Utilizes json-2-csv to convert the JSON to CSV format and output
             let options = {
               prependHeader: false, //Disables JSON values from being added as header rows for every line
@@ -60,6 +64,7 @@ async function validateRecipients(email_count, myArgs) {
                 "results.is_disposable",
                 "results.is_free",
                 "results.delivery_confidence",
+                "results.did_you_mean",
               ], //Sets the order of keys
             };
             let json2csvCallback = function (err, csv) {
