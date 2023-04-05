@@ -10,8 +10,6 @@
 
 Firstly ensure you have `node`:
 
-At the time of this project, Node v16.15.0 was used. Node v18.1.0 was tested but the performance was not as good as v16.
-
 Either by downloading directly and installing via: https://nodejs.org/en/download/
 
 Or by using the following instructions: https://treehouse.github.io/installation-guides/mac/node-mac.html
@@ -21,6 +19,7 @@ Get the project, and install dependencies.
 ```
 git clone https://github.com/ZSamuels28/ASyncRecipientValidation-V2.git
 cd ASyncRecipientValidation-V2
+npm install
 ```
 
 You can now type `node ./app.js -h` and see usage info.
@@ -63,6 +62,10 @@ optional arguments:
                         filename to write validation results to (in .CSV
                         format)
 ```
+
+## Concurrency
+
+Note that concurrency limit can be set in the `validateRecipients.js` file by changing the following parameter `const CONCURRENCY_LIMIT = [ConcurrencyLimit]`. This will vary based on computing power.
 
 ## File input / output
 
